@@ -84,7 +84,7 @@
         android:layout_height="53dp"
         android:background="@drawable/custom_button"
         android:elevation="35dp"
-        android:shadowColor="@color/material_on_background_emphasis_medium"
+
 
         android:text="Login"
         android:textColor="@color/black"
