@@ -1,5 +1,6 @@
 package com.example.myapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -58,8 +59,17 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please Enter your Email", Toast.LENGTH_SHORT).show()
             }
 
-            if (binding.emailAddress.text.isNotBlank() && binding.password.text.isNotBlank()) {
+            if ((binding.emailAddress.text.contains("admin@gmail.com")) && (binding.password.text.contains("admin"))
+            ) {
+
                 Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, WelcomePage::class.java)
+                startActivity(intent)
+            }
+           if (binding.emailAddress.text.isNotBlank() && binding.password.text.isNotBlank() && !binding.emailAddress.text.contains("admin@gmail.com") && !binding.password.text.contains("admin")     //
+            )
+           {
+                Toast.makeText(this, "Email or Password are not coreect", Toast.LENGTH_SHORT).show()
             }
 
         }
