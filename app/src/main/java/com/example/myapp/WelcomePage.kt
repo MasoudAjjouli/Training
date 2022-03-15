@@ -16,33 +16,36 @@ import com.example.myapp.databinding.ActivityMainBinding
 import com.example.myapp.databinding.ActivityWelcomePageBinding
 
 class WelcomePage : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //Don;t forget to add the databinding
 
         setContentView(R.layout.activity_welcome_page)
 
 //       var binding2: ActivityWelcomePageBinding =
-//           DataBindingUtil.setContentView(this, R.layout.activity_welcome_page)
-
-        var binding: ActivityWelcomePageBinding = ActivityWelcomePageBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        binding.frag1.setOnClickListener {
-            replaceFragment(fragment1())
-        }
-
-        binding.frag2.setOnClickListener {
-            replaceFragment(fragment2())
-        }
-
-        binding.frag3.setOnClickListener {
-            replaceFragment(fragment3())
-        }
+////           DataBindingUtil.setContentView(this, R.layout.activity_welcome_page)
+//
+//        var binding: ActivityWelcomePageBinding = ActivityWelcomePageBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
+//
+//        binding.frag1.setOnClickListener {
+//            replaceFragment(fragment1())
+//        }
+//
+//        binding.frag2.setOnClickListener {
+//            replaceFragment(fragment2())
+//        }
+//
+//        binding.frag3.setOnClickListener {
+//            replaceFragment(fragment3())
+//        }
     }
-    private fun replaceFragment(fragment: Fragment) {
-        val fragmentManger = supportFragmentManager
-        val fragmentTransaction = fragmentManger.beginTransaction()
-        fragmentTransaction.replace(R.id.fragment, fragment)
-        fragmentTransaction.commit()
-    }
+//    private fun replaceFragment(fragment: Fragment) {
+//        val fragmentManger = supportFragmentManager
+//        val fragmentTransaction = fragmentManger.beginTransaction()
+//        fragmentTransaction.replace(R.id.fragment, fragment)
+//        fragmentTransaction.commit()
+//    }
 }

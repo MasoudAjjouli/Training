@@ -14,18 +14,66 @@ import com.example.myapp.databinding.ActivityMainBindingImpl
 import com.example.myapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        initView()
+    }
 
-        //setContentView(activity_main)
-
-        var binding: ActivityMainBinding =
-            DataBindingUtil.setContentView(this, R.layout.activity_main)
-
+    private fun initView() {
         binding.myVar = ("Welcome Back!")
+        with(binding){
+            login.setOnClickListener {
+                emailAddress.addTextChangedListener(object : TextWatcher {
+                    override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                    }
 
+                    override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                    }
+
+                    override fun afterTextChanged(p0: Editable?) {
+                        if (android.util.Patterns.EMAIL_ADDRESS.matcher(emailAddress.text.toString())
+                                .matches()
+                        )
+                            login.isEnabled = true
+                        else {
+                            login.isEnabled = false
+                            emailAddress.setError("Invalid Email Address!")
+                        }
+                    }
+                })
+
+                if (emailAddress.text.isNullOrBlank() && binding.password.text.isNullOrBlank())
+                    Toast.makeText(this, "Please Enter your Email and Passowrd", Toast.LENGTH_SHORT)
+                        .show()
+
+                if (emailAddress.text.isNotBlank() && binding.password.text.isNullOrBlank()) {
+
+                    Toast.makeText(this, "Please Enter your Password", Toast.LENGTH_SHORT).show()
+                }
+
+                if (emailAddress.text.isNullOrBlank() && binding.password.text.isNotBlank()) {
+
+                    Toast.makeText(this, "Please Enter your Email", Toast.LENGTH_SHORT).show()
+                }
+
+                if ((binding.emailAddress.text.contains("admin@gmail.com")) && (binding.password.text.contains("admin"))
+                ) {
+
+                    Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, WelcomePage::class.java)
+                    startActivity(intent)
+                }
+                if (binding.emailAddress.text.isNotBlank() && binding.password.text.isNotBlank() && !binding.emailAddress.text.contains("admin@gmail.com") && !binding.password.text.contains("admin")     //
+                ) {
+                    Toast.makeText(this, "Email or Password are not coreect", Toast.LENGTH_SHORT).show()
+                }
+
+            }
+        }
         binding.login.setOnClickListener {
-
             binding.emailAddress.addTextChangedListener(object : TextWatcher {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
@@ -66,9 +114,8 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, WelcomePage::class.java)
                 startActivity(intent)
             }
-           if (binding.emailAddress.text.isNotBlank() && binding.password.text.isNotBlank() && !binding.emailAddress.text.contains("admin@gmail.com") && !binding.password.text.contains("admin")     //
-            )
-           {
+            if (binding.emailAddress.text.isNotBlank() && binding.password.text.isNotBlank() && !binding.emailAddress.text.contains("admin@gmail.com") && !binding.password.text.contains("admin")     //
+            ) {
                 Toast.makeText(this, "Email or Password are not coreect", Toast.LENGTH_SHORT).show()
             }
 

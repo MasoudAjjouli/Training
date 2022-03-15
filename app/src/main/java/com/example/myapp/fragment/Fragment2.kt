@@ -1,12 +1,9 @@
-package com.example.myapp
+package com.example.myapp.fragment
 
-import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import com.example.myapp.R
 
-class fragment1 : Fragment(R.layout.fragment1) {
+class fragment2 : Fragment(R.layout.fragment2) {
 
 //    lateinit var binding: Fragment1Binding
 //
