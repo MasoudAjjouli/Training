@@ -16,9 +16,10 @@ import com.example.myapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        intView()
+    }
 
-        //setContentView(activity_main)
-
+    private fun intView() {
         var binding: ActivityMainBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_main)
 
@@ -26,13 +27,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.login.setOnClickListener {
 
-            binding.emailAddress.addTextChangedListener(object : TextWatcher {
+            binding.emailAddress.addTextChangedListener(object : TextWatcher { //email validation
+
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
-
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
-
                 override fun afterTextChanged(p0: Editable?) {
                     if (android.util.Patterns.EMAIL_ADDRESS.matcher(binding.emailAddress.text.toString())
                             .matches()
@@ -66,13 +66,14 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, WelcomePage::class.java)
                 startActivity(intent)
             }
-           if (binding.emailAddress.text.isNotBlank() && binding.password.text.isNotBlank() && !binding.emailAddress.text.contains("admin@gmail.com") && !binding.password.text.contains("admin")     //
+            if (binding.emailAddress.text.isNotBlank() && binding.password.text.isNotBlank() && !binding.emailAddress.text.contains("admin@gmail.com") && !binding.password.text.contains("admin")     //
             )
-           {
+            {
                 Toast.makeText(this, "Email or Password are not coreect", Toast.LENGTH_SHORT).show()
             }
 
         }
+
     }
 }
 
