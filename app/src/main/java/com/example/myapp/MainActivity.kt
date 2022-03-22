@@ -5,17 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import androidx.databinding.DataBindingUtil
-import com.example.myapp.R.layout.*
-import com.example.myapp.databinding.ActivityMainBindingImpl
 import com.example.myapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         intView()
     }
 
@@ -63,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             ) {
 
                 Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, WelcomePage::class.java)
+                val intent = Intent(this, WelcomeActivity::class.java)
                 startActivity(intent)
             }
             if (binding.emailAddress.text.isNotBlank() && binding.password.text.isNotBlank() && !binding.emailAddress.text.contains("admin@gmail.com") && !binding.password.text.contains("admin")     //
