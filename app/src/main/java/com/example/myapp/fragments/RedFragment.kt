@@ -10,22 +10,18 @@ import androidx.databinding.DataBindingUtil
 import com.example.myapp.R
 import com.example.myapp.databinding.RedFragmentBinding
 
-public class RedFragment : Fragment() {
+class RedFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         val binding = DataBindingUtil.inflate<RedFragmentBinding>(inflater,
-            R.layout.red_fragment,container,false)
+            R.layout.red_fragment, container, false)
         return binding.root
-
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    companion object {
+        //Shared variable
+        const val TAG_KEY = "TAG_KEY"
+        fun newInstance(): RedFragment = RedFragment()
     }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-    }
-
 }

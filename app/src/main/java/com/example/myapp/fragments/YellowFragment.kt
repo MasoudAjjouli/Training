@@ -18,14 +18,5 @@ class YellowFragment : Fragment() {
             R.layout.yellow_fragment,container,false)
         return binding.root
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-    }
-
 }
 
