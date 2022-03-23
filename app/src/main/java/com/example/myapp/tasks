@@ -1,0 +1,3 @@
+1 - Create base fragment and place the viewpage inside it
+2 - add the created fragment as root fragment - use navigation component
+3 - sync the tabLayout with viewpager
