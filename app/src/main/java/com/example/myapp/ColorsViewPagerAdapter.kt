@@ -1,13 +1,12 @@
 package com.example.myapp
 
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.myapp.fragments.BlueFragment
 import com.example.myapp.fragments.RedFragment
 import com.example.myapp.fragments.YellowFragment
 
-class ColorsViewPagerAdapter(activity: AppCompatActivity):FragmentStateAdapter(activity) {
+class ColorsViewPagerAdapter(fragment: Fragment):FragmentStateAdapter(fragment) {
 
     override fun getItemCount(): Int {
         return ITEM_COUNT
