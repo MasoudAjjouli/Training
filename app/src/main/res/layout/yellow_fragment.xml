@@ -10,14 +10,10 @@
         android:layout_height="match_parent">
 
 
-        <TextView
-            android:id="@+id/textfrag2"
-            android:layout_width="128dp"
-            android:layout_height="59dp"
-            android:text="Yellow"
-            android:textSize="30dp"
-            android:textColor="@color/black"
-            android:textAlignment="center"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

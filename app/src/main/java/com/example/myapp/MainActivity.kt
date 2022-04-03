@@ -7,19 +7,22 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
+import androidx.core.widget.doAfterTextChanged
 import androidx.databinding.DataBindingUtil
 import com.example.myapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding:ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         intView()
+        initSomeView()
     }
 
     private fun intView() {
-        var binding: ActivityMainBinding =
-            DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         binding.myVar = ("Welcome Back!")
 
@@ -32,14 +35,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
                 override fun afterTextChanged(p0: Editable?) {
-                    if (android.util.Patterns.EMAIL_ADDRESS.matcher(binding.emailAddress.text.toString())
-                            .matches()
-                    )
-                        binding.login.isEnabled = true
-                    else {
-                        binding.login.isEnabled = false
-                        binding.emailAddress.setError("Invalid Email Address!")
-                    }
+
                 }
             })
 
@@ -72,6 +68,20 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    private fun initSomeView(){
+        binding.emailAddress.doAfterTextChanged {
+            if (android.util.Patterns.EMAIL_ADDRESS.matcher(binding.emailAddress.text.toString())
+                    .matches()
+            )
+                binding.login.isEnabled = true
+            else {
+                binding.login.isEnabled = false
+                binding.emailAddress.setError("Invalid Email Address!")
+            }
+
+        }
     }
 }
 
