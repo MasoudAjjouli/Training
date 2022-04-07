@@ -1,12 +1,25 @@
 package com.example.myapp.models
 
-data class RecyclerList(val items: ArrayList<RecyclerData>)
-data class RecyclerData( val Friends : String,
-                         val address: String,
-                         val bio: String,
-                         val emailAddress: String,
-                         val fullName: String,
-                         val id: Int,
-                         val interests: String,
-                         val jobTitle: String,
-                         val phoneNumber: String)
+import com.google.gson.annotations.SerializedName
+
+typealias UserInfo = List<UserInfoElement>
+
+data class UserInfoElement (
+    val id: Long?,
+    val bio: String?,
+    val address: String?,
+    @SerializedName("Friends")
+    val friends: String?,
+    val fullName: String?,
+    val jobTitle: String?,
+    val interests: String?,
+    val phoneNumber: String?,
+    val emailAddress: String?
+)
+
+enum class Friends {
+    Age,
+    Email,
+    Name,
+    Phone
+}

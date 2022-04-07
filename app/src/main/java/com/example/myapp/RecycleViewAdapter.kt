@@ -4,27 +4,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapp.databinding.RecyclerListRowBinding
-import com.example.myapp.models.RecyclerData
-import com.squareup.picasso.Picasso
+import com.example.myapp.models.UserInfoElement
 import java.util.ArrayList
 
 class RecycleViewAdapter : RecyclerView.Adapter<RecycleViewAdapter.MyViewHolder>() {
-
-
-
-    var items = ArrayList<RecyclerData>()
-    fun setUpdatedData(items: ArrayList<RecyclerData>){
-
-        this.items = items
+    var items = ArrayList<UserInfoElement>()
+    fun setUpdatedData(items: List<UserInfoElement>){
+        this.items.addAll(items)
         notifyDataSetChanged()
     }
     class MyViewHolder(view:View): RecyclerView.ViewHolder(view){
         val fullName = view.findViewById<TextView>(R.id.FullName)
         val emailAdress = view.findViewById<TextView>(R.id.emailAddress)
-        fun bind(data: RecyclerData){
+        fun bind(data: UserInfoElement){
             fullName.text =data.fullName
             emailAdress.text =data.emailAddress
 

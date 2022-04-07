@@ -14,15 +14,16 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapp.R
 import com.example.myapp.RecycleViewAdapter
-import com.example.myapp.WelcomeActivity
-import com.example.myapp.databinding.ActivityWelcomeNewBinding
 import com.example.myapp.databinding.YellowFragmentBinding
-import com.example.myapp.models.RecyclerList
+import com.example.myapp.models.UserInfo
+import com.example.myapp.models.UserInfoElement
 import com.example.myapp.viewModel.WelcomeViewModel
+import java.util.ArrayList
 
 class YellowFragment : Fragment() {
     private lateinit var binding: YellowFragmentBinding
     private lateinit var recyclerAdapter: RecycleViewAdapter
+    private val viewModel by lazy {  ViewModelProvider(this).get(WelcomeViewModel::class.java)}
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -36,6 +37,7 @@ class YellowFragment : Fragment() {
     }
 
     private fun initView() {
+        recyclerAdapter = RecycleViewAdapter()
         val recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(activity)
         val decoration = DividerItemDecoration(activity,DividerItemDecoration.VERTICAL)
@@ -45,14 +47,16 @@ class YellowFragment : Fragment() {
     }
 
     private fun initeViewModel(){
-        val viewModel = ViewModelProvider(this).get(WelcomeViewModel::class.java)
-        viewModel.getRecyclerListObserver().observe(viewLifecycleOwner, Observer<RecyclerList>{
-            if(it !=null){
-                recyclerAdapter.setUpdatedData(it.items)
-            }else{
-                Toast.makeText(activity,"Error in getting data",Toast.LENGTH_SHORT)
-            }
-        })
+        viewModel.getRecyclerListObserver().observe(viewLifecycleOwner) {
+            it?.let {
+                recyclerAdapter.setUpdatedData(it)
+            } ?: Toast.makeText(activity, "Error in getting data", Toast.LENGTH_SHORT)
+//            if(it !=null){
+//                recyclerAdapter.setUpdatedData(it.items)
+//            }else{
+//                Toast.makeText(activity,"Error in getting data",Toast.LENGTH_SHORT)
+//            }
+        }
         viewModel.makeApiCall()
     }
 
