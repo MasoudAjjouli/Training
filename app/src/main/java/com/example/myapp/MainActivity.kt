@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                 binding.login.isEnabled = false
                 binding.emailAddress.setError("Invalid Email Address!")
             }
-
+//hi
         }
     }
 }
