@@ -22,7 +22,7 @@ class WelcomeViewModel: ViewModel(){
             val responce = retroInstance.getDataFromApi()
             recyclerListLiveData.value = responce
             print("")
-            //newline
+            //newline!
         }
     }
 }
