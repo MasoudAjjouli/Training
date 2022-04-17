@@ -8,16 +8,19 @@
         <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/drawable/background.xml" value="0.24" />
         <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/drawable/custom_button.xml" value="0.24" />
         <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.14" />
+        <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/activity_cell_detail.xml" value="0.207166392092257" />
         <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/activity_welcome.xml" value="0.1" />
         <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/activity_welcome_page.xml" value="0.2" />
         <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/base_fragment.xml" value="0.275" />
         <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/blue_fragment.xml" value="0.183203125" />
+        <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/card_cell.xml" value="0.2899505766062603" />
+        <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/cell_detail.xml" value="0.2899505766062603" />
         <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/fragment1.xml" value="0.275" />
         <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/fragment2.xml" value="0.275" />
         <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/fragment3.xml" value="0.275" />
         <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/main_fragment.xml" value="0.275" />
-        <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/recycler_list_row.xml" value="0.33" />
+        <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/recycler_list_row.xml" value="0.25" />
         <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/red_fragment.xml" value="0.1046875" />
         <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/welcome_fragment.xml" value="0.25" />
         <entry key="..\:/Users/FIS/AndroidStudioProjects/MyApp/app/src/main/res/layout/yellow_fragment.xml" value="0.25" />

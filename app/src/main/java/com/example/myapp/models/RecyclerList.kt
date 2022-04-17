@@ -1,8 +1,12 @@
 package com.example.myapp.models
 
+
 import com.google.gson.annotations.SerializedName
 
+
 typealias UserInfo = List<UserInfoElement>
+
+val USER_ID = "userExtra"
 
 data class UserInfoElement (
     val id: Long?,
@@ -15,7 +19,9 @@ data class UserInfoElement (
     val interests: String?,
     val phoneNumber: String?,
     val emailAddress: String?
-)
+) {
+
+}
 
 enum class Friends {
     Age,
@@ -23,3 +29,4 @@ enum class Friends {
     Name,
     Phone
 }
+

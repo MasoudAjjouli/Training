@@ -3,14 +3,8 @@ package com.example.myapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import com.example.myapp.databinding.ActivityWelcomeBinding
 import com.example.myapp.databinding.ActivityWelcomeNewBinding
-import com.example.myapp.fragments.BlueFragment
-import com.example.myapp.fragments.RedFragment
-import com.example.myapp.fragments.YellowFragment
+
 
 class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeNewBinding

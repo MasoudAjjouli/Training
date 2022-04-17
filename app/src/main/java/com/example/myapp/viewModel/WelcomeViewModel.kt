@@ -18,11 +18,16 @@ class WelcomeViewModel: ViewModel(){
 
     fun makeApiCall(){
         viewModelScope.launch{
-           val retroInstance =  RetroInstance.getRetroInstance().create(RetroService::class.java)
-            val responce = retroInstance.getDataFromApi()
-            recyclerListLiveData.value = responce
-            print("")
-            //newline!
+            try {
+                val retroInstance =  RetroInstance.getRetroInstance().create(RetroService::class.java)
+                val responce = retroInstance.getDataFromApi()
+                recyclerListLiveData.value = responce
+                print("")
+
+            }catch (e:Exception){
+                print("")
+            }
+
         }
     }
 }
