@@ -13,7 +13,7 @@ import java.util.ArrayList
 
 class RecycleViewAdapter(
     private val clickListener: UserClickListener
-) : RecyclerView.Adapter<CardViewHolder>() {
+) : RecyclerView.Adapter<RecycleViewAdapter.CardViewHolder>() {
    // private lateinit var recyclerListRowBinding: RecyclerListRowBinding
     var items = ArrayList<UserInfoElement>()
     fun setUpdatedData(items: List<UserInfoElement>){
@@ -21,26 +21,6 @@ class RecycleViewAdapter(
         notifyDataSetChanged()
 
     }
-
-//    class MyViewHolder(view:View): RecyclerView.ViewHolder(view){
-//        val clickListener: UserClickListener
-//            get() {
-//                TODO()
-//            }
-//        val fullName = view.findViewById<TextView>(R.id.fullName)
-//        val emailAdress = view.findViewById<TextView>(R.id.emailAddress)
-//        val cardView = view.findViewById<CardView>(R.id.cardView)
-//        fun bind(data: UserInfoElement){
-//            fullName.text =data.fullName
-//            emailAdress.text =data.emailAddress
-//
-//            cardView.setOnClickListener{
-//
-//                clickListener.onClick(User)
-//            }
-//        }
-//
-//    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
         val from = LayoutInflater.from(parent.context)
@@ -54,5 +34,20 @@ class RecycleViewAdapter(
 
     override fun getItemCount(): Int {
         return items.size
+    }
+
+    class CardViewHolder(
+        private val recyclerListRowBinding: RecyclerListRowBinding,
+        private val clickListener: UserClickListener
+    ): RecyclerView.ViewHolder(recyclerListRowBinding.root) {
+
+        fun bindUser(User :UserInfoElement){
+            recyclerListRowBinding.fullName.text= User.fullName
+            recyclerListRowBinding.emailAddress.text = User.emailAddress
+
+            recyclerListRowBinding.cardView.setOnClickListener{
+                clickListener.onClick(User)
+            }
+        }
     }
 }

@@ -1,7 +1,6 @@
 package com.example.myapp.fragments
 
-import android.content.Context
-import android.content.Intent
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,21 +8,15 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myapp.CellDetail
 import com.example.myapp.R
 import com.example.myapp.RecycleViewAdapter
 import com.example.myapp.UserClickListener
 import com.example.myapp.databinding.YellowFragmentBinding
-import com.example.myapp.models.USER_ID
-import com.example.myapp.models.UserInfo
 import com.example.myapp.models.UserInfoElement
 import com.example.myapp.viewModel.WelcomeViewModel
-import java.util.ArrayList
+
 
 class YellowFragment : Fragment() , UserClickListener{
     private lateinit var binding: YellowFragmentBinding
@@ -47,7 +40,9 @@ class YellowFragment : Fragment() , UserClickListener{
         recyclerAdapter = RecycleViewAdapter(yellowFragment)
         val recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(activity)
-        recyclerView.adapter = RecycleViewAdapter(yellowFragment)
+        recyclerView.adapter = RecycleViewAdapter(this)
+
+
         recyclerView.adapter = recyclerAdapter
     }
 
@@ -64,10 +59,9 @@ class YellowFragment : Fragment() , UserClickListener{
     }
     override fun onClick (User: UserInfoElement) {
 
-        val intent = Intent(activity,CellDetail::class.java)
-        intent.putExtra(USER_ID,User.id)
-        startActivity(intent)
-
+//        val intent = Intent(activity,CellDetail::class.java)
+//        intent.putExtra(USER_ID,User.id)
+//        startActivity(intent)
 
     }
 
