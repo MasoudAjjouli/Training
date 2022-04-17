@@ -59,9 +59,11 @@ class YellowFragment : Fragment() , UserClickListener{
     }
     override fun onClick (User: UserInfoElement) {
 
-//        val intent = Intent(activity,CellDetail::class.java)
-//        intent.putExtra(USER_ID,User.id)
-//        startActivity(intent)
+
+        TODO("navigate to new fragment using navigation components " +
+            "send the user details to the new fragment" +
+            "name the fragment - User details" +
+            "display the details in the new fragment")
 
     }
 
