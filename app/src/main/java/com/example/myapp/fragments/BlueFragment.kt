@@ -1,6 +1,5 @@
 package com.example.myapp.fragments
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,10 +12,16 @@ import com.example.myapp.databinding.BlueFragmentBinding
 
 class BlueFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-        val binding = DataBindingUtil.inflate<BlueFragmentBinding>(inflater,
-            R.layout.blue_fragment,container,false)
+        val binding = DataBindingUtil.inflate<BlueFragmentBinding>(
+            inflater,
+            R.layout.blue_fragment, container, false
+        )
         return binding.root
     }
 

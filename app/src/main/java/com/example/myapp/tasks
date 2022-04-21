@@ -6,4 +6,7 @@
 2- why we use viewModels
 3- network call and kotlin coroutines
 4- https://retoolapi.dev/JJfCqp/data
-5- 
+
+5- Bind data using viewmodel
+6- read about hilt
+7- apply hilt to the project

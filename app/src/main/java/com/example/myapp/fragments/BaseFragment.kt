@@ -15,8 +15,10 @@ class BaseFragment : Fragment() {
     private lateinit var binding: ActivityWelcomeBinding
     private lateinit var viewPagerAdapter: ColorsViewPagerAdapter
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         binding = DataBindingUtil.inflate<ActivityWelcomeBinding>(
             inflater, R.layout.activity_welcome, container, false
         ).apply {
@@ -30,15 +32,21 @@ class BaseFragment : Fragment() {
         initViews()
     }
 
-    private fun initViews(){
+    private fun initViews() {
         viewPagerAdapter = ColorsViewPagerAdapter(this@BaseFragment)
-        with(binding){
+        with(binding) {
             viewPager.adapter = viewPagerAdapter
             TabLayoutMediator(binding.tlColorFragment, viewPager) { tab, position ->
-                when(position){
-                    0->{tab.text="Red"}
-                    1->{tab.text="Yellow"}
-                    2->{tab.text="Blue"}
+                when (position) {
+                    0 -> {
+                        tab.text = "Red"
+                    }
+                    1 -> {
+                        tab.text = "Yellow"
+                    }
+                    2 -> {
+                        tab.text = "Blue"
+                    }
 
                 }
             }.attach()

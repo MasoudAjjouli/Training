@@ -16,6 +16,5 @@ class WelcomeActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-
     }
 }

@@ -5,8 +5,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetroInstance {
 
-    companion object{
-        val BaseURL ="https://retoolapi.dev/"
+    companion object {
+        val BaseURL = "https://retoolapi.dev/"
         fun getRetroInstance(): Retrofit {
             return Retrofit.Builder()
                 .baseUrl(BaseURL)

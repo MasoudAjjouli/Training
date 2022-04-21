@@ -12,7 +12,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.myapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding:ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +32,10 @@ class MainActivity : AppCompatActivity() {
 
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
+
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
+
                 override fun afterTextChanged(p0: Editable?) {
 
                 }
@@ -53,16 +55,19 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please Enter your Email", Toast.LENGTH_SHORT).show()
             }
 
-            if ((binding.emailAddress.text.contains("admin@gmail.com")) && (binding.password.text.contains("admin"))
+            if ((binding.emailAddress.text.contains("admin@gmail.com")) && (binding.password.text.contains(
+                    "admin"
+                ))
             ) {
 
                 Toast.makeText(this, "Welcome", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, WelcomeActivity::class.java)
                 startActivity(intent)
             }
-            if (binding.emailAddress.text.isNotBlank() && binding.password.text.isNotBlank() && !binding.emailAddress.text.contains("admin@gmail.com") && !binding.password.text.contains("admin")     //
-            )
-            {
+            if (binding.emailAddress.text.isNotBlank() && binding.password.text.isNotBlank() && !binding.emailAddress.text.contains(
+                    "admin@gmail.com"
+                ) && !binding.password.text.contains("admin")     //
+            ) {
                 Toast.makeText(this, "Email or Password are not coreect", Toast.LENGTH_SHORT).show()
             }
 
@@ -70,7 +75,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun initSomeView(){
+    private fun initSomeView() {
         binding.emailAddress.doAfterTextChanged {
             if (android.util.Patterns.EMAIL_ADDRESS.matcher(binding.emailAddress.text.toString())
                     .matches()
