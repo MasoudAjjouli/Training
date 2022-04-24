@@ -34,6 +34,7 @@ class UserDetailsFragment : Fragment() {
 
     }
 
+
     private fun initView() {
 
 //        binding.fullName.text = args.currentUser?.fullName
