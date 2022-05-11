@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.example.myapp.ColorsViewPagerAdapter
+import com.example.myapp.utils.ColorsViewPagerAdapter
 import com.example.myapp.R
 import com.example.myapp.databinding.ActivityWelcomeBinding
 import com.google.android.material.tabs.TabLayoutMediator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class BaseFragment : Fragment() {
     private lateinit var binding: ActivityWelcomeBinding
     private lateinit var viewPagerAdapter: ColorsViewPagerAdapter

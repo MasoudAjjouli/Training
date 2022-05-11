@@ -1,4 +1,4 @@
-package com.example.myapp
+package com.example.myapp.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,11 +6,13 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
 import androidx.core.widget.doAfterTextChanged
 import androidx.databinding.DataBindingUtil
+import com.example.myapp.R
 import com.example.myapp.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 

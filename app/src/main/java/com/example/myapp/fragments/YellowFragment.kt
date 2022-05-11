@@ -13,12 +13,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapp.R
-import com.example.myapp.RecycleViewAdapter
-import com.example.myapp.UserClickListener
+import com.example.myapp.utils.RecycleViewAdapter
+import com.example.myapp.utils.UserClickListener
 import com.example.myapp.databinding.YellowFragmentBinding
 import com.example.myapp.models.UserInfoElement
 import com.example.myapp.viewModel.WelcomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class YellowFragment : Fragment(), UserClickListener {
     private lateinit var binding: YellowFragmentBinding
     private lateinit var recyclerAdapter: RecycleViewAdapter

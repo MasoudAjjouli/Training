@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.myapp.R
 import com.example.myapp.databinding.RedFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RedFragment : Fragment() {
 
     override fun onCreateView(

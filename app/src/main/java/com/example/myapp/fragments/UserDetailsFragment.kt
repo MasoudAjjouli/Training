@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.myapp.R
-import com.example.myapp.UserDetailsViewModel
+import com.example.myapp.viewModel.UserDetailsViewModel
 import com.example.myapp.databinding.UserDetailsFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -18,7 +18,7 @@ class UserDetailsFragment : Fragment() {
 
     private val args: UserDetailsFragmentArgs by navArgs()
     private lateinit var binding: UserDetailsFragmentBinding
-    private val viewModel :UserDetailsViewModel by viewModels()
+    private val viewModel : UserDetailsViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,8 +32,6 @@ class UserDetailsFragment : Fragment() {
             container,
             false
         )
-
-        viewModel
         initView()
 
         return binding.root
@@ -42,14 +40,5 @@ class UserDetailsFragment : Fragment() {
 
     private fun initView() {
 
-        binding.apply {
-            fullName.text = viewModel.taskName
-            emailAddress.text = viewModel.taskEmail
-            bio.text = viewModel.taskBio
-        }
-
-//        binding.fullName.text = args.currentUser?.fullName
-//        binding.emailAddress.text = args.currentUser?.emailAddress
-//        binding.bio.text = args.currentUser?.bio
     }
 }

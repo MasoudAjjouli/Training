@@ -8,8 +8,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.myapp.R
 import com.example.myapp.databinding.BlueFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class BlueFragment : Fragment() {
 
     override fun onCreateView(
