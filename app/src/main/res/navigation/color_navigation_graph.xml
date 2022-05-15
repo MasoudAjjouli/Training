@@ -9,5 +9,18 @@
         android:id="@+id/baseFragment"
         android:name="com.example.myapp.fragments.BaseFragment"
         android:label="base_fragment"
-        tools:layout="@layout/base_fragment" />
+        tools:layout="@layout/base_fragment" >
+        <action
+            android:id="@+id/action_baseFragment_to_userDetails"
+            app:destination="@id/userDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetails"
+        android:name="com.example.myapp.fragments.UserDetailsFragment"
+        android:label="UserDetails" >
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.myapp.models.UserInfoElement"
+            app:nullable="true" />
+    </fragment>
 </navigation>
