@@ -16,7 +16,7 @@ data class UserInfoElement(
     val address: String?,
     @SerializedName("Friends")
     val friends: String?,
-    val fullName: String?,
+    var fullName: String?,
     val jobTitle: String?,
     val interests: String?,
     val phoneNumber: String?,

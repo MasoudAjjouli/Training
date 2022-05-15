@@ -18,7 +18,8 @@ class UserDetailsFragment : Fragment() {
 
     private val args: UserDetailsFragmentArgs by navArgs()
     private lateinit var binding: UserDetailsFragmentBinding
-    private val viewModel : UserDetailsViewModel by viewModels()
+    private val userDetailsViewModel : UserDetailsViewModel by viewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,7 +32,9 @@ class UserDetailsFragment : Fragment() {
             R.layout.user_details_fragment,
             container,
             false
-        )
+        ).apply {
+            viewModel = userDetailsViewModel
+        }
         initView()
 
         return binding.root
@@ -39,6 +42,7 @@ class UserDetailsFragment : Fragment() {
     }
 
     private fun initView() {
-
+        args?.currentUser?.let { userDetailsViewModel.bind(it) }
     }
+
 }
